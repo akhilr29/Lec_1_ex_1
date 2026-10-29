@@ -3,7 +3,7 @@
 Exploratory analysis and three classifiers (logistic regression, random
 forest, gradient boosting) that predict whether an airline passenger was
 satisfied. The work is from the Kaggle Playground Series S6E10 competition
-(`playground-series-s6e10`).
+(`playground-series-s6e10`). I have just rewritten this notebook using modular code as an exercise - THIS IS NOT MY OWN WORK NOR IS IT MEANT TO BE SUBMITTED FOR ANY EVALUATION
 
 The analysis lives in `predicting-airline-satisfaction.ipynb`. All the logic is
 in a small package, `src/mypkg/utils.py`, which the notebook imports.
