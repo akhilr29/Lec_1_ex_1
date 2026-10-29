@@ -23,6 +23,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 # <project root>/data, resolved from this file so it works from any directory
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+DATA_FILES = ["sample_submission.csv", "test.csv", "train.csv"]
 
 SERVICE_KEYWORDS = [
     "service",
@@ -60,6 +61,14 @@ def load_data(data_dir=DATA_DIR):
         ``(df_sample, df_test, df_train)``
     """
     data_dir = Path(data_dir)
+    missing = [f for f in DATA_FILES if not (data_dir / f).exists()]
+    if missing:
+        raise FileNotFoundError(
+            f"Missing {missing} in {data_dir}.\n"
+            "Download them from the Kaggle competition "
+            "'playground-series-s6e10' and put them in that folder "
+            "(see the README)."
+        )
     df_sample = pd.read_csv(data_dir / "sample_submission.csv")
     df_test = pd.read_csv(data_dir / "test.csv")
     df_train = pd.read_csv(data_dir / "train.csv")

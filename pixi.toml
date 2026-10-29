@@ -2,7 +2,7 @@
 authors = ["Akhil Raghavan <ar2367@cam.ac.uk>"]
 channels = ["conda-forge"]
 name = "Lec_1_ex_1"
-platforms = ["win-64"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
 version = "0.1.0"
 
 [tasks]
